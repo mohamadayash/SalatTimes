@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Salat.Views.ItemsPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage"
+             FlowDirection="RightToLeft"
+           
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">Yellow</Color>
+            <Color x:Key="HeadingTextColor">Black</Color>
+            <Color x:Key="NormalTextColor">Blue</Color>
+            <Style x:Key="LabelPageHeadingStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <RelativeLayout>
+        <Image Source="background2.jpg" Aspect="AspectFill"
+               
+                RelativeLayout.WidthConstraint=
+                  "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                  "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" Margin="20,40,20,20" 
+              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="65" />
+                <RowDefinition Height="65" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" Opacity="0.95">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="{Binding NextSalat}" Grid.Row="0" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"   />
+                    <Label Text="{Binding TimeRemained}" Grid.Row="1" FontFamily="{StaticResource ClockFont}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  />
+                </Grid>
+            </Frame>
+
+
+            <Frame Grid.Row="1" Opacity="0.8" BackgroundColor="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="&#xf051;" Grid.Column="0" FontFamily="{StaticResource WeatherFont}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Label Text="الفجر" Grid.Column="1" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" TextColor="White" />
+                    <Label Text="{Binding CurrentDay.Fajir}" Grid.Column="2" FontFamily="{StaticResource ClockFont}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" Opacity="0.8" BackgroundColor="Black" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="&#xf051;" Grid.Column="0" FontFamily="{StaticResource WeatherFont}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Label Text="الشروق" Grid.Column="1" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" TextColor="White" />
+                    <Label Text="{Binding CurrentDay.Shourouk}" Grid.Column="2" FontFamily="{StaticResource ClockFont}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"   />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="3" Opacity="0.8" BackgroundColor="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="&#xf00d;" Grid.Column="0" FontFamily="{StaticResource WeatherFont}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Label Text="الظهر" Grid.Column="1" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" TextColor="White" />
+                    <Label Text="{Binding CurrentDay.Zohor}" Grid.Column="2" FontFamily="{StaticResource ClockFont}"  FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" Opacity="0.8" BackgroundColor="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="&#xf002;" Grid.Column="0" FontFamily="{StaticResource WeatherFont}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="White" />
+                    <Label Text="العصر" Grid.Column="1" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" TextColor="White"    />
+                    <Label Text="{Binding CurrentDay.Assr}" Grid.Column="2" FontFamily="{StaticResource ClockFont}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"   />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="5" Opacity="0.8" BackgroundColor="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="&#xf052;" Grid.Column="0" FontFamily="{StaticResource WeatherFont}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Label Text="المغرب" Grid.Column="1" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" TextColor="White"  />
+                    <Label Text="{Binding CurrentDay.Moghrib}" Grid.Column="2" FontFamily="{StaticResource ClockFont}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"    />
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="6" Opacity="0.8" BackgroundColor="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="&#xf02e;" Grid.Column="0" FontFamily="{StaticResource WeatherFont}" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="White" />
+                    <Label Text="العشاء" Grid.Column="1" FontFamily="{StaticResource AndroidFont}" FontSize="Medium" TextColor="White"   />
+                    <Label Text="{Binding CurrentDay.Ishaa}" Grid.Column="2" FontFamily="{StaticResource ClockFont}" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"   />
+                </Grid>
+            </Frame>
+
+        
+
+        </Grid>
+    </RelativeLayout>
+    
+ 
+
+</ContentPage>

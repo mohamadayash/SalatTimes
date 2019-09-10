@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Salat.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#000000</Color>/Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="WeatherFont">
+                <On Platform="Android" Value="weathericons-regular-webfont.ttf#Regular" />
+                <On Platform="UWP" Value="/Assets/weathericons-regular-webfont.ttf#Regular" />
+                <On Platform="iOS" Value="weathericons-regular-webfont#Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="AndroidFont">
+                <On Platform="Android" Value="Droid-Sans-Arabic.ttf#Regular" />
+                <On Platform="UWP" Value="/Assets/Droid-Sans-Arabic.ttf#Regular" />
+                <On Platform="iOS" Value="Droid-Sans-Arabic#Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="ClockFont">
+                <On Platform="Android" Value="digital-7.ttf#Regular" />
+                <On Platform="UWP" Value="/Assets/digital-7.ttf#Regular" />
+                <On Platform="iOS" Value="digital-7#Regular" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>
